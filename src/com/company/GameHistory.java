@@ -24,7 +24,7 @@ public class GameHistory {
     public void GameEndWin(Player p1, Player p2) {
         try {
             FileWriter wr = new FileWriter(f, true);
-            SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss");
+            SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
             wr.write(formatForDateNow.format(new Date()) + " " + p1.getName() + " won " + p2.getName() + '\n');
             wr.close();
         } catch (IOException ex) {
@@ -37,7 +37,7 @@ public class GameHistory {
         try
         {
             FileWriter wr = new FileWriter(f, true);
-            SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss");
+            SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
             wr.write(formatForDateNow.format(new Date()) + " Draw between " + p1.getName() + " and " + p2.getName() + '\n');
             wr.close();
         }
