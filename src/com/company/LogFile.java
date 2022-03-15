@@ -86,11 +86,7 @@ public class LogFile {
     public void endLog()
     {
         temp = e.appendChild(dom.createElement("GameResult"));
-        Player p0 = new Player();
-        p0.setMark("-");
-        p0.setId(0);
-        p0.setName("");
-        temp.appendChild(createPlayer(dom, p0));
+        temp.setTextContent("Draw!");
         try
         {
             Transformer tr = TransformerFactory.newInstance().newTransformer();

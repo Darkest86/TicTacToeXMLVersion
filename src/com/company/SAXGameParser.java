@@ -38,10 +38,7 @@ public class SAXGameParser {
                 if  (!gameResult)
                     p[temp.getId()-1] = temp;
                 else {
-                    if (temp.getId() == 0)
-                        System.out.println("Draw between players " + p[0].getName() + " and " + p[1].getName());
-                    else
-                        System.out.println(p[temp.getId()-1].getName() + " as Player " + temp.getId() + "(" + temp.getMark() + ") is winner");
+                    System.out.println(p[temp.getId()-1].getName() + " as Player " + temp.getId() + "(" + temp.getMark() + ") is winner");
                 }
             }
             if (qName.equals("GameResult"))
@@ -56,6 +53,11 @@ public class SAXGameParser {
                 game.setMark(Integer.parseInt(information));
                 game.out();
             }
+            if (gameResult && information.equals("Draw!"))
+            {
+                System.out.println("Draw between players " + p[0].getName() + " and " + p[1].getName());
+            }
+
         }
     }
 }
